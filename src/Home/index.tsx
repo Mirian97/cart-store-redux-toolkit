@@ -1,6 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import CartContainer from 'components/CartContainer'
 import Header from 'components/Header'
+import Modal from 'components/Modal'
 import { calculateTotal } from 'features/cartSlice'
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
@@ -21,6 +22,7 @@ const Home = () => {
       <StyledHomeContent>
         <CartContainer />
       </StyledHomeContent>
+      <Modal />
     </StyledHomeContainer>
   )
 }

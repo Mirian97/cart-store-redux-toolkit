@@ -1,6 +1,6 @@
 import { Button, Divider, Stack, Typography } from '@mui/material'
 import CartItem from 'components/CartItem'
-import { clearCart } from 'features/cartSlice'
+import { clearCart } from 'features/cart/cartSlice'
 import { useDispatch, useSelector } from 'react-redux'
 import { RootState } from 'store'
 import { StyledCartContainer } from './style'

@@ -2,7 +2,7 @@
 import CartContainer from 'components/CartContainer'
 import Header from 'components/Header'
 import Modal from 'components/Modal'
-import { calculateTotal } from 'features/cartSlice'
+import { calculateTotal } from 'features/cart/cartSlice'
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { RootState } from 'store'

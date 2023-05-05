@@ -45,7 +45,7 @@ const CartContainer = () => {
       <Divider />
       {renderTotalCart()}
       <Stack alignItems='center' mt={2}>
-        <Button variant='outlined' color='error' onClick={() => dispatch(clearCart())}>
+        <Button variant='outlined' color='error' onClick={() => dispatch(clearCart)}>
           CLEAR CART
         </Button>
       </Stack>

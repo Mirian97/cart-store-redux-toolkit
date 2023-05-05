@@ -1,12 +1,14 @@
 import CartContainer from 'components/CartContainer'
 import Header from 'components/Header'
-import { StyledHomeContainer } from './style'
+import { StyledHomeContainer, StyledHomeContent } from './style'
 
 const Home = () => {
   return (
     <StyledHomeContainer>
       <Header />
-      <CartContainer />
+      <StyledHomeContent>
+        <CartContainer />
+      </StyledHomeContent>
     </StyledHomeContainer>
   )
 }

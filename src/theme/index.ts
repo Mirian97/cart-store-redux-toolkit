@@ -39,7 +39,8 @@ const theme = createTheme({
       fontWeight: 700,
       fontSize: '2rem',
       minHeight: 54,
-      borderRadius: 4
+      borderRadius: 4,
+      textTransform: 'none'
     }
   }
 })

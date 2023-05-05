@@ -1,21 +1,36 @@
-import { Modal as MuiModal } from '@mui/material'
 import Button from '@mui/material/Button'
-import Paper from '@mui/material/Paper'
+import Stack from '@mui/material/Stack'
 import Typography from '@mui/material/Typography'
-import { useState } from 'react'
+import { clearCart } from 'features/cart/cartSlice'
+import { useDispatch } from 'react-redux'
+import { StyledModal, StyledPaper } from './style'
 
-const Modal = () => {
-  const [open, setOpen] = useState(false)
-  const handleClose = () => setOpen(false)
-
+const Modal = ({ open, closeModal }) => {
+  const dispatch = useDispatch()
   return (
-    <MuiModal open={open} onClose={handleClose}>
-      <Paper>
-        <Typography variant='h5'>Remove All Items From Your Shopping Cart?</Typography>
-        <Button color='primary'>CONFIRM</Button>
-        <Button color='error'>CANCEL</Button>
-      </Paper>
-    </MuiModal>
+    <StyledModal open={open} onClose={closeModal}>
+      <StyledPaper>
+        <Typography variant='h4' mb={3} align='center'>
+          Remove All Items From Your Shopping Cart?
+        </Typography>
+        <Stack direction='row' gap={5} justifyContent='center'>
+          <Button
+            color='primary'
+            variant='outlined'
+            fullWidth
+            onClick={() => {
+              dispatch(clearCart())
+              closeModal()
+            }}
+          >
+            CONFIRM
+          </Button>
+          <Button color='error' variant='outlined' fullWidth onClick={closeModal}>
+            CANCEL
+          </Button>
+        </Stack>
+      </StyledPaper>
+    </StyledModal>
   )
 }
 

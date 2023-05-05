@@ -10,19 +10,11 @@ const CartContainer = () => {
   const dispatch = useDispatch()
 
   const renderCartItems = () => (
-    <>
-      {amount < 1 ? (
-        <Typography variant='h4' fontWeight={700} color='grey.200' align='center' mb={10}>
-          is currently empty
-        </Typography>
-      ) : (
-        <Stack my={6} gap={5}>
-          {cartItems.map((item) => (
-            <CartItem key={item.id} {...item} />
-          ))}
-        </Stack>
-      )}
-    </>
+    <Stack my={6} gap={5}>
+      {cartItems.map((item) => (
+        <CartItem key={item.id} {...item} />
+      ))}
+    </Stack>
   )
 
   const renderTotalCart = () => (
@@ -41,14 +33,26 @@ const CartContainer = () => {
       <Typography variant='h1' fontWeight={700} color='grey.300' align='center'>
         YOUR BAG
       </Typography>
-      {renderCartItems()}
-      <Divider />
-      {renderTotalCart()}
-      <Stack alignItems='center' mt={2}>
-        <Button variant='outlined' color='error' onClick={() => dispatch(clearCart())}>
-          CLEAR CART
-        </Button>
-      </Stack>
+      {amount < 1 ? (
+        <Typography variant='h4' fontWeight={700} color='grey.200' align='center' mt={4}>
+          is currently empty
+        </Typography>
+      ) : (
+        <>
+          {renderCartItems()}
+          <Divider />
+          {renderTotalCart()}
+          <Stack alignItems='center' mt={2}>
+            <Button
+              variant='outlined'
+              color='error'
+              onClick={() => dispatch(clearCart())}
+            >
+              CLEAR CART
+            </Button>
+          </Stack>
+        </>
+      )}
     </StyledCartContainer>
   )
 }

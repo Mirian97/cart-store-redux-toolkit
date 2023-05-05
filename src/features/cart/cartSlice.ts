@@ -1,5 +1,6 @@
-import { PayloadAction, createSlice } from '@reduxjs/toolkit'
+import { PayloadAction, createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 import cartItems from 'data/cartItems'
+import api from 'services/api'
 
 const initialState = {
   cartItems,
@@ -7,6 +8,15 @@ const initialState = {
   amount: 0,
   isLoading: true
 }
+
+export const getCartItems = createAsyncThunk('cart/getCartItems', async (_, thunkAPI) => {
+  try {
+    const { data } = await api.get('/')
+    return data
+  } catch (error) {
+    return thunkAPI.rejectWithValue({ message: 'Something went wrong! :(' })
+  }
+})
 
 const cartSlice = createSlice({
   name: 'cart',
@@ -40,6 +50,19 @@ const cartSlice = createSlice({
       state.total = total
       state.amount = amount
     }
+  },
+  extraReducers: (builder) => {
+    builder
+      .addCase(getCartItems.pending, (state) => {
+        state.isLoading = true
+      })
+      .addCase(getCartItems.fulfilled, (state, action) => {
+        state.isLoading = false
+        state.cartItems = action.payload
+      })
+      .addCase(getCartItems.rejected, (state) => {
+        state.isLoading = false
+      })
   }
 })
 

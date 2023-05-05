@@ -5,7 +5,7 @@ import { Provider } from 'react-redux'
 import { store } from 'store/index'
 import theme from 'theme'
 import GlobalStyles from 'theme/globalStyles'
-import App from './App'
+import Home from './Home'
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 root.render(
@@ -14,7 +14,7 @@ root.render(
     <GlobalStyles />
     <ThemeProvider theme={theme}>
       <Provider store={store}>
-        <App />
+        <Home />
       </Provider>
     </ThemeProvider>
   </React.StrictMode>

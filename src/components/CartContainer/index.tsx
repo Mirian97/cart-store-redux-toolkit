@@ -1,6 +1,6 @@
 import { Button, Divider, Stack, Typography } from '@mui/material'
 import CartItem from 'components/CartItem'
-import { clearCart } from 'features/cart/cartSlice'
+import { clearCart } from 'features/cartSlice'
 import { useDispatch, useSelector } from 'react-redux'
 import { RootState } from 'store'
 import { StyledCartContainer } from './style'
@@ -12,15 +12,15 @@ const CartContainer = () => {
   const renderCartItems = () => (
     <>
       {amount < 1 ? (
+        <Typography variant='h4' fontWeight={700} color='grey.200' align='center' mb={10}>
+          is currently empty
+        </Typography>
+      ) : (
         <Stack my={6} gap={5}>
           {cartItems.map((item) => (
             <CartItem key={item.id} {...item} />
           ))}
         </Stack>
-      ) : (
-        <Typography variant='h4' fontWeight={700} color='grey.200' align='center'>
-          is currently empty
-        </Typography>
       )}
     </>
   )
@@ -31,7 +31,7 @@ const CartContainer = () => {
         Total
       </Typography>
       <Typography variant='h4' fontWeight={700} color='grey.300'>
-        $ {total}
+        $ {total.toFixed(2)}
       </Typography>
     </Stack>
   )
@@ -45,7 +45,7 @@ const CartContainer = () => {
       <Divider />
       {renderTotalCart()}
       <Stack alignItems='center' mt={2}>
-        <Button variant='outlined' color='error' onClick={() => dispatch(clearCart)}>
+        <Button variant='outlined' color='error' onClick={() => dispatch(clearCart())}>
           CLEAR CART
         </Button>
       </Stack>

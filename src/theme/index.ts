@@ -28,7 +28,7 @@ const theme = createTheme({
     }
   },
   shape: {
-    borderRadius: 24
+    borderRadius: 8
   },
   typography: {
     fontFamily: "'Poppins', sans-serif",
@@ -38,10 +38,8 @@ const theme = createTheme({
       fontFamily: "'Poppins', sans-serif",
       fontWeight: 700,
       fontSize: '2rem',
-      lineHeight: '3rem',
-      color: '#2D172C',
-      textTransform: 'none',
-      minHeight: 62
+      minHeight: 54,
+      borderRadius: 4
     }
   }
 })

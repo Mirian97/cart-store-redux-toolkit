@@ -1,13 +1,17 @@
 import KeyboardArrowDownRoundedIcon from '@mui/icons-material/KeyboardArrowDownRounded'
 import KeyboardArrowUpRoundedIcon from '@mui/icons-material/KeyboardArrowUpRounded'
 import { Button, Grid, IconButton, Stack, Typography } from '@mui/material'
-import { removeItem } from 'features/cart/cartSlice'
+import { decrease, increase, removeItem } from 'features/cartSlice'
 import { useDispatch } from 'react-redux'
 import { CartItemProps } from './interface'
 import { StyledCartItem } from './style'
 
 const CartItem = ({ id, title, img, amount, price }: CartItemProps) => {
   const dispatch = useDispatch()
+
+  const handleDecreaseCartItem = () =>
+    amount === 1 ? dispatch(removeItem(id)) : dispatch(decrease(id))
+
   return (
     <StyledCartItem container spacing={1}>
       <Grid item>
@@ -24,11 +28,11 @@ const CartItem = ({ id, title, img, amount, price }: CartItemProps) => {
       </Grid>
       <Grid item xs>
         <Stack alignItems='center'>
-          <IconButton>
+          <IconButton onClick={() => dispatch(increase(id))}>
             <KeyboardArrowUpRoundedIcon color='primary' fontSize='large' />
           </IconButton>
           <Typography variant='h3'>{amount}</Typography>
-          <IconButton>
+          <IconButton onClick={handleDecreaseCartItem}>
             <KeyboardArrowDownRoundedIcon color='primary' fontSize='large' />
           </IconButton>
         </Stack>

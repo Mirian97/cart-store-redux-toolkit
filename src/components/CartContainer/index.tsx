@@ -10,9 +10,9 @@ const CartContainer = () => {
   const renderCartItems = () => (
     <>
       {amount < 1 ? (
-        <Stack my={6}>
+        <Stack my={6} gap={5}>
           {cartItems.map((item) => (
-            <CartItem key={item.id} />
+            <CartItem key={item.id} {...item} />
           ))}
         </Stack>
       ) : (
@@ -44,7 +44,7 @@ const CartContainer = () => {
       {renderTotalCart()}
       <Stack alignItems='center' mt={2}>
         <Button variant='outlined' color='error'>
-          Clear Cart
+          CLEAR CART
         </Button>
       </Stack>
     </StyledCartContainer>

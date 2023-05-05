@@ -6,7 +6,7 @@ export const StyledCartContainer = styled(Box)`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin: ${theme.spacing(10, 0)};
+    padding: ${theme.spacing(10, 0)};
     width: 100%;
   `}
 `

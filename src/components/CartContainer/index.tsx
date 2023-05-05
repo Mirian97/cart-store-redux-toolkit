@@ -1,6 +1,6 @@
 import { Button, Divider, Stack, Typography } from '@mui/material'
 import CartItem from 'components/CartItem'
-import { clearCart } from 'features/cartSlice'
+import { openModal } from 'features/modal/modalSlice'
 import { useDispatch, useSelector } from 'react-redux'
 import { RootState } from 'store'
 import { StyledCartContainer } from './style'
@@ -46,7 +46,7 @@ const CartContainer = () => {
             <Button
               variant='outlined'
               color='error'
-              onClick={() => dispatch(clearCart())}
+              onClick={() => dispatch(openModal())}
             >
               CLEAR CART
             </Button>

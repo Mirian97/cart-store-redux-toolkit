@@ -10,7 +10,9 @@ Deploy da aplicação: https://store-redux-toolkit.netlify.app/
 
 ## Página Home
 
-<img src="./src/assets/home-page.png" alt='Home Page' align='center'>
+<div align="center">
+  <img src="./src/assets/home-page.png" alt="Home Page" style="display:block; margin:auto;" />
+</div>
 
 ---
 

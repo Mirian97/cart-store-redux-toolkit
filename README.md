@@ -4,15 +4,15 @@ Esta aplicação simula um carrinho de compras de um e-commerce onde é possíve
 
 Existe a opção de limpar o carrinho que abre um modal para confirmar a operação.
 
-Deploy da aplicação: https://store-redux-toolkit.netlify.app/
+Deploy da aplicação: <a src='https://cart-store.netlify.app/' target='_blank'>
 
 ---
 
 ### Página Home
 
-<div align="center">
+<p align="center">
   <img src="./src/assets/home-page.png" alt="Home Page" style="display:block; margin:auto;" />
-</div>
+</p>
 
 ---
 

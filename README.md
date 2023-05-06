@@ -4,19 +4,19 @@ Esta aplicação simula um carrinho de compras de um e-commerce onde é possíve
 
 Existe a opção de limpar o carrinho que abre um modal para confirmar a operação.
 
-Deploy da aplicação: <a src='https://cart-store.netlify.app/' target='_blank'>https://cart-store.netlify.app/</a>
+Deploy da aplicação: <a href='https://cart-store.netlify.app/' target='_blank'>https://cart-store.netlify.app/</a>
 
----
+<br>
 
-### Página Home
+## Página Home
 
 <p align="center">
   <img src="./src/assets/home-page.png" alt="Home Page" style="display:block; margin:auto;" />
 </p>
 
----
+<br>
 
-### Tecnologias utilizadas
+## Tecnologias utilizadas
 
 - React.js
 - Typescript

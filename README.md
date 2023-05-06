@@ -8,7 +8,7 @@ Deploy da aplicação: https://store-redux-toolkit.netlify.app/
 
 ---
 
-## Página Home
+### Página Home
 
 <div align="center">
   <img src="./src/assets/home-page.png" alt="Home Page" style="display:block; margin:auto;" />
@@ -16,7 +16,7 @@ Deploy da aplicação: https://store-redux-toolkit.netlify.app/
 
 ---
 
-## Tecnologias utilizadas
+### Tecnologias utilizadas
 
 - React.js
 - Typescript

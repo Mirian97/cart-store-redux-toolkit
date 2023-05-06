@@ -1,10 +1,8 @@
-import KeyboardArrowDownRoundedIcon from '@mui/icons-material/KeyboardArrowDownRounded'
-import KeyboardArrowUpRoundedIcon from '@mui/icons-material/KeyboardArrowUpRounded'
 import { Button, Grid, IconButton, Stack, Typography } from '@mui/material'
 import { decrease, increase, removeItem } from 'features/cart/cartSlice'
 import { ICartItem } from 'features/cart/interface'
 import { useDispatch } from 'react-redux'
-import { StyledCartItem } from './style'
+import { StyledArrowDownIcon, StyledArrowUpIcon, StyledCartItem } from './style'
 
 const CartItem = ({ id, title, img, amount, price }: ICartItem) => {
   const dispatch = useDispatch()
@@ -13,11 +11,13 @@ const CartItem = ({ id, title, img, amount, price }: ICartItem) => {
     amount === 1 ? dispatch(removeItem(id)) : dispatch(decrease(id))
 
   return (
-    <StyledCartItem container spacing={1}>
-      <Grid item>
-        <img src={img} alt={title} />
+    <StyledCartItem container spacing={2}>
+      <Grid item xs={12} sm='auto'>
+        <Stack direction='row' justifyContent='center'>
+          <img src={img} alt={title} />
+        </Stack>
       </Grid>
-      <Grid item xs={8.5}>
+      <Grid item xs={6} sm>
         <Typography variant='h4' fontWeight={700}>
           {title}
         </Typography>
@@ -26,14 +26,16 @@ const CartItem = ({ id, title, img, amount, price }: ICartItem) => {
         </Typography>
         <Button onClick={() => dispatch(removeItem(id))}>remove</Button>
       </Grid>
-      <Grid item xs>
-        <Stack alignItems='center'>
+      <Grid item xs={6} sm='auto'>
+        <Stack alignItems='flex-end'>
           <IconButton onClick={() => dispatch(increase(id))}>
-            <KeyboardArrowUpRoundedIcon color='primary' fontSize='large' />
+            <StyledArrowUpIcon color='primary' />
           </IconButton>
-          <Typography variant='h3'>{amount}</Typography>
+          <Typography variant='h4' mr={3}>
+            {amount}
+          </Typography>
           <IconButton onClick={handleDecreaseCartItem}>
-            <KeyboardArrowDownRoundedIcon color='primary' fontSize='large' />
+            <StyledArrowDownIcon color='primary' />
           </IconButton>
         </Stack>
       </Grid>

@@ -12,5 +12,6 @@ export const StyledHomeContent = styled(Box)`
   ${({ theme }) => css`
     max-width: 1440px;
     margin: auto;
+    padding: ${theme.spacing(0, 4)};
   `}
 `

@@ -1,9 +1,9 @@
-import { Button, Divider, Stack, Typography } from '@mui/material'
+import { Button, Stack, Typography } from '@mui/material'
 import CartItem from 'components/CartItem'
 import { openModal } from 'features/modal/modalSlice'
 import { useDispatch, useSelector } from 'react-redux'
 import { RootState } from 'store'
-import { StyledCartContainer } from './style'
+import { StyledCartContainer, StyledDivider } from './style'
 
 const CartContainer = () => {
   const { amount, cartItems, total } = useSelector((store: RootState) => store.cart)
@@ -40,7 +40,7 @@ const CartContainer = () => {
       ) : (
         <>
           {renderCartItems()}
-          <Divider />
+          <StyledDivider />
           {renderTotalCart()}
           <Stack alignItems='center' mt={2}>
             <Button

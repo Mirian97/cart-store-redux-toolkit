@@ -23,11 +23,12 @@ export const StyledToolbar = styled(Toolbar)`
 
 export const StyledBadge = styled(Badge)`
   & span {
-    font-size: 1.2rem;
+    font-size: 12px;
     z-index: 0;
+    font-weight: 600;
   }
 `
 
 export const StyledBagIcon = styled(LocalMallOutlinedIcon)`
-  font-size: 44px;
+  font-size: 36px;
 `

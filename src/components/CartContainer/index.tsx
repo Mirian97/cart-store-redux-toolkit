@@ -30,7 +30,7 @@ const CartContainer = () => {
 
   return (
     <StyledCartContainer>
-      <Typography variant='h1' fontWeight={700} color='grey.300' align='center'>
+      <Typography variant='h2' fontWeight={700} color='grey.300' align='center'>
         YOUR BAG
       </Typography>
       {amount < 1 ? (

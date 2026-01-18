@@ -9,7 +9,7 @@ const Header = () => {
   return (
     <StyledAppBar>
       <StyledToolbar>
-        <Typography variant='h3' fontWeight={700}>
+        <Typography variant='h3' fontWeight={600}>
           Cart Store
         </Typography>
         <IconButton color='inherit'>

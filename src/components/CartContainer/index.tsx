@@ -30,9 +30,27 @@ const CartContainer = () => {
 
   return (
     <StyledCartContainer>
-      <Typography variant='h2' fontWeight={700} color='grey.300' align='center'>
-        YOUR BAG
-      </Typography>
+      <Stack
+        direction='row'
+        justifyContent='space-between'
+        alignItems='center'
+        spacing={2}
+        mb={3}
+      >
+        <Typography variant='h2' fontWeight={700} color='grey.300' align='center'>
+          YOUR BAG
+        </Typography>
+        <Stack alignItems='center' mt={2}>
+          <Button
+            variant='contained'
+            color='error'
+            size='medium'
+            onClick={() => dispatch(openModal())}
+          >
+            Clear Cart
+          </Button>
+        </Stack>
+      </Stack>
       {amount < 1 ? (
         <Typography variant='h4' fontWeight={700} color='grey.200' align='center' mt={4}>
           is currently empty
@@ -42,16 +60,6 @@ const CartContainer = () => {
           {renderCartItems()}
           <StyledDivider />
           {renderTotalCart()}
-          <Stack alignItems='center' mt={2}>
-            <Button
-              variant='contained'
-              color='error'
-              size='medium'
-              onClick={() => dispatch(openModal())}
-            >
-              Clear Cart
-            </Button>
-          </Stack>
         </>
       )}
     </StyledCartContainer>

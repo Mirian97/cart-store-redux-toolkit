@@ -15,5 +15,5 @@ export const StyledCartContainer = styled(Box)`
 export const StyledDivider = styled(Divider)`
   border-color: lightgray;
   border-radius: 10px;
-  border-width: 2px;
+  border-width: 1px;
 `

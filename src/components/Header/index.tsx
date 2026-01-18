@@ -10,7 +10,7 @@ const Header = () => {
     <StyledAppBar>
       <StyledToolbar>
         <Typography variant='h3' fontWeight={700}>
-          Redux Toolkit
+          Cart Store
         </Typography>
         <IconButton color='inherit'>
           <StyledBadge badgeContent={amount} color='error' showZero>

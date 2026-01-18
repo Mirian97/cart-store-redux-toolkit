@@ -12,12 +12,12 @@ const CartItem = ({ id, title, img, amount, price }: ICartItem) => {
 
   return (
     <StyledCartItem container spacing={2}>
-      <Grid item xs={12} sm='auto'>
+      <Grid size={{ xs: 12, sm: 'auto' }}>
         <Stack direction='row' justifyContent='center'>
           <img src={img} alt={title} />
         </Stack>
       </Grid>
-      <Grid item xs={6} sm>
+      <Grid size={{ xs: 6, sm: 'grow' }}>
         <Typography variant='h4' fontWeight={700}>
           {title}
         </Typography>
@@ -26,7 +26,7 @@ const CartItem = ({ id, title, img, amount, price }: ICartItem) => {
         </Typography>
         <Button onClick={() => dispatch(removeItem(id))}>remove</Button>
       </Grid>
-      <Grid item xs={6} sm='auto'>
+      <Grid size={{ xs: 6, sm: 'auto' }}>
         <Stack alignItems='flex-end'>
           <IconButton onClick={() => dispatch(increase(id))}>
             <StyledArrowUpIcon color='primary' />

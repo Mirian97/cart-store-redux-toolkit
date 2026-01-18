@@ -37,8 +37,7 @@ const theme = createTheme({
     button: {
       fontFamily: "'Poppins', sans-serif",
       fontWeight: 700,
-      fontSize: '2rem',
-      minHeight: 54,
+      fontSize: 16,
       borderRadius: 4,
       textTransform: 'none'
     }

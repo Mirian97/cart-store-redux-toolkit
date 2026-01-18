@@ -5,9 +5,11 @@ import Badge from '@mui/material/Badge'
 import Toolbar from '@mui/material/Toolbar'
 
 export const StyledAppBar = styled(AppBar)`
-  position: static;
+  position: sticky;
+  top: 0;
   flex-direction: row;
   justify-content: center;
+  background-color: #092635;
 `
 
 export const StyledToolbar = styled(Toolbar)`

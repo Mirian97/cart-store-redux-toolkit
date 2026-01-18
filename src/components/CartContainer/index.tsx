@@ -44,11 +44,12 @@ const CartContainer = () => {
           {renderTotalCart()}
           <Stack alignItems='center' mt={2}>
             <Button
-              variant='outlined'
+              variant='contained'
               color='error'
+              size='medium'
               onClick={() => dispatch(openModal())}
             >
-              CLEAR CART
+              Clear Cart
             </Button>
           </Stack>
         </>

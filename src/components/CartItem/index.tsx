@@ -24,7 +24,14 @@ const CartItem = ({ id, title, img, amount, price }: ICartItem) => {
         <Typography variant='h4' color='grey.200' my={2}>
           $ {price}
         </Typography>
-        <Button onClick={() => dispatch(removeItem(id))}>Remove</Button>
+        <Button
+          variant='contained'
+          color='primary'
+          size='small'
+          onClick={() => dispatch(removeItem(id))}
+        >
+          REMOVE
+        </Button>
       </Grid>
       <Grid size={{ xs: 6, sm: 'auto' }}>
         <Stack alignItems='flex-end'>
